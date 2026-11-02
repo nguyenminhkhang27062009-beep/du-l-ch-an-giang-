@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khám Phá An Giang</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f8f5;
+    color: #263238;
+    line-height: 1.7;
+}
+
+header {
+    background: #075b43;
+    color: white;
+    padding: 16px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #ffd166;
+}
+
+.hero {
+    min-height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+    background:
+    linear-gradient(rgba(0,50,35,.55),rgba(0,40,30,.65)),
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR383ljPL9AGoCB7j_APOIDO-wANb14JSI01QofL4k8BQ&s=10") center/cover;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 19px;
+    max-width: 700px;
+    margin: auto;
+}
+
+.button {
+    display: inline-block;
+    background: #ffbd45;
+    color: #173b2d;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+section {
+    padding: 65px 7%;
+}
+
+.section-title {
+    text-align: center;
+    color: #086044;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.section-desc {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 35px;
+    color: #65736d;
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.intro img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.intro h3 {
+    color: #086044;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.intro-text {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.07);
+}
+
+.intro-text h4 {
+    color: #08704d;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    color: #08704d;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.card h4 {
+    color: #08704d;
+    margin-top: 13px;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.card p {
+    font-size: 14px;
+    text-align: justify;
+    margin-bottom: 8px;
+}
+
+.card ul {
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.card li {
+    margin-bottom: 5px;
+}
+
+.culture, .itinerary {
+    background: #e9f4ed;
+}
+
+.highlight {
+    background: #075b43;
+    color: white;
+    text-align: center;
+}
+
+.highlight h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.highlight p {
+    max-width: 850px;
+    margin: auto;
+}
+
+.potential {
+    background: white;
+}
+
+.potential-box {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 22px;
+}
+
+.potential-item {
+    background: #edf6ef;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid #08704d;
+}
+
+.potential-item h3 {
+    color: #08704d;
+    margin-bottom: 8px;
+}
+
+.timeline {
+    max-width: 850px;
+    margin: auto;
+}
+
+.timeline-item {
+    background: white;
+    margin: 18px 0;
+    padding: 23px;
+    border-left: 5px solid #08704d;
+    border-radius: 8px;
+}
+
+.timeline-item h3 {
+    color: #08704d;
+    margin-bottom: 8px;
+}
+
+footer {
+    background: #063c2e;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+@media(max-width:850px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .intro {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:550px) {
+    .hero {
+        min-height: 430px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .potential-box {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 45px 5%;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🌿 KHÁM PHÁ AN GIANG</div>
+
+    <nav>
+        <a href="#home">Trang chủ</a>
+        <a href="#about">Giới thiệu</a>
+        <a href="#places">Du lịch</a>
+        <a href="#culture">Văn hóa</a>
+        <a href="#food">Ẩm thực</a>
+        <a href="#potential">Tiềm năng</a>
+        <a href="#schedule">Lịch trình</a>
+    </nav>
+</header>
+
+<!-- TRANG CHỦ -->
+<div class="hero" id="home">
+    <div>
+        <h1>KHÁM PHÁ AN GIANG</h1>
+        <p>
+            Vùng đất hội tụ vẻ đẹp thiên nhiên,
+            văn hóa đặc sắc, ẩm thực phong phú
+            và những trải nghiệm du lịch hấp dẫn của miền Tây Nam Bộ.
+        </p>
+        <a href="#places" class="button">KHÁM PHÁ NGAY</a>
+    </div>
+</div>
+
+<!-- GIỚI THIỆU -->
+<section id="about">
+    <h2 class="section-title">GIỚI THIỆU VỀ AN GIANG</h2>
+    <p class="section-desc">
+        An Giang là vùng đất giàu truyền thống lịch sử,
+        văn hóa và sở hữu nhiều cảnh quan thiên nhiên độc đáo.
+    </p>
+
+    <div class="intro">
+        <img
+        src="https://www.homecredit.vn/upload/07_du_lich_an_giang_chua_lanh_cung_khung_canh_tru_tinh_cua_canh_dong_ta_pa_f6b2ca2aca.jpg"
+        alt="Phong cảnh thiên nhiên">
+
+        <div class="intro-text">
+            <h3>🌿 Vẻ đẹp miền Tây sông nước</h3>
+
+            <p>
+                An Giang nằm ở khu vực Tây Nam Bộ, nổi bật với
+                cảnh quan sông nước, đồng bằng rộng lớn và những
+                dãy núi đặc trưng của vùng Thất Sơn. Đây là vùng đất
+                có sự kết hợp hài hòa giữa thiên nhiên, lịch sử
+                và đời sống văn hóa cộng đồng.
+            </p>
+
+            <h4>Đặc điểm thiên nhiên</h4>
+            <p>
+                Thiên nhiên An Giang có sự đa dạng giữa đồng bằng,
+                sông ngòi, núi non, rừng tràm và các hồ nước tự nhiên.
+                Mỗi khu vực mang một vẻ đẹp riêng, tạo điều kiện
+                thuận lợi cho các hoạt động tham quan, khám phá
+                và nghỉ dưỡng.
+            </p>
+
+            <h4>Đặc điểm văn hóa</h4>
+            <p>
+                Nơi đây có sự giao thoa văn hóa của nhiều cộng đồng
+                dân tộc như Kinh, Khmer, Chăm và Hoa. Sự đa dạng ấy
+                được thể hiện qua kiến trúc, lễ hội, trang phục,
+                tín ngưỡng, nghề truyền thống và ẩm thực.
+            </p>
+
+            <h4>Giá trị du lịch</h4>
+            <p>
+                Với nhiều cảnh đẹp và bản sắc văn hóa phong phú,
+                An Giang có tiềm năng phát triển du lịch sinh thái,
+                du lịch tâm linh, du lịch cộng đồng và du lịch
+                trải nghiệm.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ĐỊA ĐIỂM DU LỊCH -->
+<section id="places">
+    <h2 class="section-title">NHỮNG ĐIỂM ĐẾN NỔI BẬT</h2>
+    <p class="section-desc">
+        Khám phá những địa danh nổi tiếng với cảnh quan thiên nhiên,
+        giá trị lịch sử và nét đẹp văn hóa đặc trưng.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://sun-ecommerce-cdn.azureedge.net/ecommerce/service-sites/asset/SunParadiseLandPhuQuoc/_default_upload_bucket/nui-cam-an-giang_1784098352.png"
+            alt="Núi Cấm">
+
+            <div class="card-content">
+                <h3>⛰️ Núi Cấm</h3>
+
+                <p>
+                    Núi Cấm là một trong những ngọn núi nổi tiếng
+                    thuộc vùng Thất Sơn. Nơi đây thu hút du khách
+                    bởi địa hình núi cao, cảnh quan thiên nhiên
+                    rộng lớn và bầu không khí trong lành.
+                </p>
+
+                <h4>Đặc điểm nổi bật</h4>
+                <p>
+                    Núi Cấm có phong cảnh kết hợp giữa núi rừng,
+                    cây xanh và những công trình tâm linh.
+                    Đứng từ trên cao, du khách có thể ngắm nhìn
+                    khung cảnh thiên nhiên rộng mở.
+                </p>
+
+                <h4>Hoạt động trải nghiệm</h4>
+                <ul>
+                    <li>Tham quan các địa điểm nổi tiếng trên núi.</li>
+                    <li>Ngắm cảnh và chụp ảnh thiên nhiên.</li>
+                    <li>Tham quan các công trình tâm linh.</li>
+                    <li>Thưởng thức những món ăn địa phương.</li>
+                </ul>
+
+                <h4>Giá trị du lịch</h4>
+                <p>
+                    Núi Cấm góp phần phát triển du lịch sinh thái
+                    kết hợp du lịch tâm linh, đồng thời tạo thêm
+                    sinh kế cho người dân địa phương.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYSk3tCEIA0dXSVyWO_Uip40f9dZqfB8QgoT7DsYcs8w&s=10"
+            alt="Miếu Bà Chúa Xứ">
+
+            <div class="card-content">
+                <h3>🛕 Miếu Bà Chúa Xứ Núi Sam</h3>
+
+                <p>
+                    Miếu Bà Chúa Xứ Núi Sam là địa điểm tín ngưỡng
+                    nổi tiếng, gắn liền với đời sống tinh thần
+                    của người dân và hoạt động du lịch tâm linh
+                    tại khu vực Châu Đốc.
+                </p>
+
+                <h4>Kiến trúc đặc sắc</h4>
+                <p>
+                    Công trình có kiến trúc nổi bật với mái ngói,
+                    họa tiết trang trí và không gian thờ tự trang nghiêm.
+                    Đây cũng là địa điểm thu hút nhiều người đến
+                    tham quan, tìm hiểu văn hóa tín ngưỡng.
+                </p>
+
+                <h4>Hoạt động trải nghiệm</h4>
+                <ul>
+                    <li>Tham quan và tìm hiểu lịch sử ngôi miếu.</li>
+                    <li>Quan sát kiến trúc và các họa tiết trang trí.</li>
+                    <li>Tìm hiểu tín ngưỡng thờ Bà Chúa Xứ.</li>
+                    <li>Khám phá các địa điểm du lịch quanh Núi Sam.</li>
+                </ul>
+
+                <h4>Giá trị văn hóa</h4>
+                <p>
+                    Địa điểm này thể hiện đời sống tín ngưỡng
+                    phong phú và góp phần gìn giữ những giá trị
+                    văn hóa truyền thống của địa phương.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXopctDXAfqB4ZfSAqq8MPgxI_vP3PQvqdP5UJu14S7Q&s=10"
+            alt="Rừng tràm Trà Sư">
+
+            <div class="card-content">
+                <h3>🌳 Rừng tràm Trà Sư</h3>
+
+                <p>
+                    Rừng tràm Trà Sư là điểm du lịch sinh thái
+                    nổi bật với không gian xanh mát, hệ sinh thái
+                    đất ngập nước và cảnh quan thiên nhiên đặc trưng.
+                </p>
+
+                <h4>Đặc điểm nổi bật</h4>
+                <p>
+                    Khu rừng có nhiều cây tràm, thảm thực vật
+                    và mặt nước phủ bèo xanh. Đây là môi trường
+                    sinh sống của nhiều loài động vật, đặc biệt
+                    là các loài chim nước.
+                </p>
+
+                <h4>Hoạt động trải nghiệm</h4>
+                <ul>
+                    <li>Ngồi xuồng tham quan rừng tràm.</li>
+                    <li>Ngắm cảnh và chụp ảnh giữa thiên nhiên.</li>
+                    <li>Quan sát các loài chim và động vật.</li>
+                    <li>Tìm hiểu hệ sinh thái đất ngập nước.</li>
+                </ul>
+
+                <h4>Ý nghĩa sinh thái</h4>
+                <p>
+                    Rừng tràm góp phần bảo vệ môi trường,
+                    duy trì đa dạng sinh học và nâng cao ý thức
+                    bảo tồn thiên nhiên cho du khách.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzb7blR7swfrimPVv_zs07h4npUMU9MWaRlonLCJwJNQ&s=10"
+            alt="Biển Hà Tiên">
+
+            <div class="card-content">
+                <h3>🌊 Hà Tiên</h3>
+
+                <p>
+                    Hà Tiên nổi tiếng với cảnh quan biển,
+                    núi đá, hang động và nhiều địa danh
+                    mang giá trị lịch sử, văn hóa.
+                </p>
+
+                <h4>Cảnh quan thiên nhiên</h4>
+                <p>
+                    Khu vực này có sự kết hợp giữa biển,
+                    bãi cát, núi đá và những thắng cảnh tự nhiên.
+                    Mỗi địa điểm đều mang vẻ đẹp riêng,
+                    tạo nên sức hấp dẫn đối với khách tham quan.
+                </p>
+
+                <h4>Hoạt động trải nghiệm</h4>
+                <ul>
+                    <li>Tham quan các bãi biển và thắng cảnh.</li>
+                    <li>Khám phá hang động, núi đá.</li>
+                    <li>Thưởng thức hải sản và đặc sản địa phương.</li>
+                    <li>Tìm hiểu lịch sử và văn hóa vùng đất.</li>
+                </ul>
+
+                <h4>Giá trị du lịch</h4>
+                <p>
+                    Hà Tiên có lợi thế phát triển du lịch biển,
+                    du lịch nghỉ dưỡng và du lịch khám phá
+                    cảnh quan thiên nhiên.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb2rayPVPFGu2ZgCROfpr0-M70wfPGY-BrHE_pzT8Ilw&s=10"
+            alt="Búng Bình Thiên">
+
+            <div class="card-content">
+                <h3>🌿 Búng Bình Thiên</h3>
+
+                <p>
+                    Búng Bình Thiên là hồ nước ngọt tự nhiên
+                    nổi tiếng với mặt nước rộng, cảnh quan
+                    yên bình và đời sống văn hóa cộng đồng
+                    người Chăm ở khu vực lân cận.
+                </p>
+
+                <h4>Đặc điểm nổi bật</h4>
+                <p>
+                    Vào mùa nước nổi, cảnh quan nơi đây trở nên
+                    đặc biệt với mặt hồ rộng, cây xanh và
+                    những hoạt động sinh hoạt gắn với sông nước.
+                </p>
+
+                <h4>Hoạt động trải nghiệm</h4>
+                <ul>
+                    <li>Ngắm cảnh hồ và chụp ảnh.</li>
+                    <li>Khám phá đời sống người dân địa phương.</li>
+                    <li>Tìm hiểu văn hóa của cộng đồng người Chăm.</li>
+                    <li>Trải nghiệm không gian sông nước miền Tây.</li>
+                </ul>
+
+                <h4>Giá trị du lịch</h4>
+                <p>
+                    Búng Bình Thiên có tiềm năng phát triển
+                    du lịch sinh thái và du lịch cộng đồng,
+                    giúp giới thiệu nét đẹp văn hóa địa phương.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://langthangangiang.net/wp-content/uploads/2021/05/nuito1.jpg"
+            alt="Thất Sơn">
+
+            <div class="card-content">
+                <h3>🏞️ Thất Sơn</h3>
+
+                <p>
+                    Thất Sơn, còn được gọi là vùng Bảy Núi,
+                    là khu vực nổi tiếng với hệ thống núi non
+                    độc đáo và nhiều câu chuyện văn hóa dân gian.
+                </p>
+
+                <h4>Đặc điểm nổi bật</h4>
+                <p>
+                    Những ngọn núi tạo nên cảnh quan khác biệt
+                    so với vùng đồng bằng xung quanh. Nơi đây
+                    còn gắn với nhiều di tích, chùa chiền
+                    và truyền thuyết dân gian.
+                </p>
+
+                <h4>Hoạt động trải nghiệm</h4>
+                <ul>
+                    <li>Khám phá cảnh quan núi rừng.</li>
+                    <li>Tham quan các địa điểm tâm linh.</li>
+                    <li>Tìm hiểu truyền thuyết về vùng Bảy Núi.</li>
+                    <li>Thưởng thức đặc sản của vùng núi.</li>
+                </ul>
+
+                <h4>Giá trị du lịch</h4>
+                <p>
+                    Thất Sơn có tiềm năng kết hợp du lịch
+                    sinh thái, du lịch khám phá và du lịch
+                    văn hóa tâm linh.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- VĂN HÓA -->
+<section class="culture" id="culture">
+    <h2 class="section-title">VĂN HÓA ĐA DẠNG</h2>
+    <p class="section-desc">
+        An Giang là nơi giao thoa văn hóa của nhiều cộng đồng
+        dân tộc với những phong tục, lễ hội và truyền thống đặc sắc.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQffoGLBeqph2GkKyIEf6DDMkAu2tCPqRweoGiutkFH1A&s=10"
+            alt="Văn hóa Khmer">
+
+            <div class="card-content">
+                <h3>Văn hóa người Khmer</h3>
+
+                <p>
+                    Người Khmer là một trong những cộng đồng dân tộc
+                    có đời sống văn hóa đặc sắc tại An Giang.
+                    Bản sắc văn hóa được thể hiện qua kiến trúc
+                    chùa Khmer, trang phục, nghệ thuật và lễ hội.
+                </p>
+
+                <h4>Kiến trúc và nghệ thuật</h4>
+                <p>
+                    Những ngôi chùa Khmer thường có màu sắc nổi bật,
+                    mái cong và các họa tiết trang trí tinh xảo.
+                    Chùa không chỉ là nơi sinh hoạt tôn giáo
+                    mà còn là trung tâm văn hóa của cộng đồng.
+                </p>
+
+                <h4>Lễ hội truyền thống</h4>
+                <p>
+                    Tết Chôl Chnăm Thmây là dịp lễ quan trọng
+                    của người Khmer. Đây là thời điểm mọi người
+                    sum họp, thực hiện các nghi lễ truyền thống
+                    và cầu mong một năm mới bình an.
+                </p>
+
+                <h4>Giá trị văn hóa</h4>
+                <p>
+                    Văn hóa Khmer góp phần làm phong phú bản sắc
+                    văn hóa An Giang, đồng thời tạo sức hấp dẫn
+                    cho hoạt động du lịch tìm hiểu văn hóa.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThWjmfvmhxMNX8iPZxF6N1bdDtiH3LSUg2ZhIHVOw06A&s=10"
+            alt="Văn hóa Chăm">
+
+            <div class="card-content">
+                <h3>Văn hóa người Chăm</h3>
+
+                <p>
+                    Cộng đồng người Chăm tại An Giang có nhiều
+                    nét văn hóa riêng biệt, thể hiện qua tín ngưỡng,
+                    kiến trúc thánh đường, trang phục và nghề dệt
+                    thổ cẩm truyền thống.
+                </p>
+
+                <h4>Kiến trúc và trang phục</h4>
+                <p>
+                    Các thánh đường Hồi giáo có kiến trúc đặc trưng,
+                    không gian trang nghiêm. Trang phục truyền thống
+                    của người Chăm cũng thể hiện sự kín đáo,
+                    tinh tế và bản sắc cộng đồng.
+                </p>
+
+                <h4>Nghề truyền thống</h4>
+                <p>
+                    Nghề dệt thổ cẩm là một nét đẹp văn hóa
+                    được lưu truyền qua nhiều thế hệ.
+                    Những sản phẩm dệt có hoa văn và màu sắc
+                    phong phú, mang giá trị thủ công truyền thống.
+                </p>
+
+                <h4>Giá trị văn hóa</h4>
+                <p>
+                    Văn hóa Chăm góp phần tạo nên sự đa dạng
+                    của An Giang. Du khách có thể tìm hiểu
+                    phong tục, nghề truyền thống và đời sống
+                    của cộng đồng qua các chuyến tham quan.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGdul-GaeMRetNnUJ2RpxEI3QHwaUigGs-s2YVo6bMLA&s=10"
+            alt="Lễ hội truyền thống">
+
+            <div class="card-content">
+                <h3>Lễ hội truyền thống</h3>
+
+                <p>
+                    An Giang có nhiều lễ hội gắn liền với
+                    tín ngưỡng và đời sống tinh thần của người dân.
+                    Các lễ hội là dịp để cộng đồng gặp gỡ,
+                    tưởng nhớ truyền thống và gìn giữ bản sắc.
+                </p>
+
+                <h4>Lễ hội Vía Bà Chúa Xứ Núi Sam</h4>
+                <p>
+                    Đây là lễ hội nổi tiếng, thu hút đông đảo
+                    người dân và du khách đến tham dự.
+                    Lễ hội thể hiện tín ngưỡng thờ Bà Chúa Xứ
+                    và nét đẹp văn hóa tâm linh địa phương.
+                </p>
+
+                <h4>Tết Chôl Chnăm Thmây</h4>
+                <p>
+                    Đây là dịp Tết cổ truyền của người Khmer,
+                    thường có các hoạt động lễ nghi, vui chơi
+                    và sinh hoạt cộng đồng.
+                </p>
+
+                <h4>Ý nghĩa lễ hội</h4>
+                <p>
+                    Lễ hội góp phần bảo tồn truyền thống,
+                    tăng cường sự gắn kết cộng đồng và
+                    quảng bá hình ảnh văn hóa An Giang
+                    đến với du khách.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ẨM THỰC -->
+<section id="food">
+    <h2 class="section-title">ẨM THỰC ĐẶC SẮC</h2>
+    <p class="section-desc">
+        Khám phá hương vị đặc trưng của vùng đất An Giang
+        qua những món ăn dân dã và hấp dẫn.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToXw8G1YmZqYc9vj9HginJvrW-LExsN7NE0VVB6RXjHw&s=10"
+            alt="Bún cá">
+
+            <div class="card-content">
+                <h3>🍜 Bún cá Châu Đốc</h3>
+
+                <p>
+                    Bún cá Châu Đốc là món ăn nổi tiếng,
+                    được nhiều người biết đến nhờ hương vị
+                    đậm đà và cách chế biến mang nét riêng
+                    của vùng đất An Giang.
+                </p>
+
+                <h4>Nguyên liệu</h4>
+                <p>
+                    Món ăn thường có cá lóc, bún tươi,
+                    rau ăn kèm và các loại gia vị.
+                    Nước dùng được nấu cùng nguyên liệu
+                    tạo nên hương vị đặc trưng.
+                </p>
+
+                <h4>Hương vị đặc trưng</h4>
+                <p>
+                    Tô bún có vị ngọt từ cá, nước dùng thơm,
+                    kết hợp với rau sống và các loại gia vị.
+                    Sự hòa quyện này tạo nên món ăn hấp dẫn.
+                </p>
+
+                <h4>Giá trị ẩm thực</h4>
+                <p>
+                    Bún cá không chỉ là món ăn quen thuộc
+                    mà còn góp phần giới thiệu nét đặc sắc
+                    trong văn hóa ẩm thực Châu Đốc.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOLYN7I8TFFl9OC0SNT72StaQA74WmakewSoSepE_tSA&s=10"
+            alt="Gỏi sầu đâu">
+
+            <div class="card-content">
+                <h3>🥗 Gỏi sầu đâu</h3>
+
+                <p>
+                    Gỏi sầu đâu là món ăn dân dã mang hương vị
+                    đặc trưng của An Giang. Món ăn gây ấn tượng
+                    bởi vị đắng nhẹ của lá sầu đâu kết hợp
+                    cùng các nguyên liệu khác.
+                </p>
+
+                <h4>Nguyên liệu</h4>
+                <p>
+                    Thành phần thường gồm lá sầu đâu,
+                    cá khô hoặc thịt, dưa leo, rau thơm
+                    và nước mắm chua ngọt.
+                </p>
+
+                <h4>Cách thưởng thức</h4>
+                <p>
+                    Các nguyên liệu được trộn đều với nước sốt,
+                    tạo nên sự kết hợp giữa vị đắng, chua,
+                    ngọt và mặn. Món ăn thường được dùng
+                    trong những bữa ăn gia đình.
+                </p>
+
+                <h4>Nét đặc sắc</h4>
+                <p>
+                    Đây là món ăn thể hiện sự khéo léo
+                    trong cách kết hợp nguyên liệu dân dã
+                    của người dân địa phương.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGooQNFq7ztGeShxdxzxZxHyuUOft3hCl1Eb2ijg5IjA&s=10"
+            alt="Tung lò mò">
+
+            <div class="card-content">
+                <h3>🍲 Tung lò mò</h3>
+
+                <p>
+                    Tung lò mò là món lạp xưởng bò truyền thống,
+                    gắn liền với văn hóa ẩm thực của cộng đồng
+                    người Chăm tại An Giang.
+                </p>
+
+                <h4>Nguyên liệu</h4>
+                <p>
+                    Món ăn được chế biến chủ yếu từ thịt bò
+                    cùng các loại gia vị và nguyên liệu
+                    truyền thống theo cách chế biến riêng.
+                </p>
+
+                <h4>Cách chế biến</h4>
+                <p>
+                    Thịt được sơ chế, tẩm ướp gia vị,
+                    sau đó nhồi vào ruột và đem phơi
+                    hoặc chế biến theo phương pháp truyền thống.
+                </p>
+
+                <h4>Giá trị văn hóa</h4>
+                <p>
+                    Tung lò mò là một nét riêng trong ẩm thực
+                    người Chăm, góp phần tạo nên sự phong phú
+                    cho văn hóa ẩm thực An Giang.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRulFTBCLSPE_BwLiCW-CluMlcCXJ70oRH6p7qOWPEo-A&s=10"
+            alt="Cơm tấm">
+
+            <div class="card-content">
+                <h3>🍛 Cơm tấm</h3>
+
+                <p>
+                    Cơm tấm là món ăn phổ biến ở miền Nam
+                    và được nhiều người yêu thích.
+                    Món ăn có thể được tìm thấy tại nhiều
+                    hàng quán ở An Giang.
+                </p>
+
+                <h4>Nguyên liệu</h4>
+                <p>
+                    Một phần cơm tấm thường gồm cơm nấu từ gạo tấm,
+                    thịt nướng, trứng, đồ chua và nước mắm.
+                    Tùy từng quán mà món ăn có cách kết hợp khác nhau.
+                </p>
+
+                <h4>Hương vị</h4>
+                <p>
+                    Cơm có độ tơi, thịt nướng thơm,
+                    kết hợp với nước mắm tạo nên hương vị
+                    hài hòa và dễ thưởng thức.
+                </p>
+
+                <h4>Sức hấp dẫn</h4>
+                <p>
+                    Đây là món ăn quen thuộc, phù hợp
+                    với nhiều đối tượng và góp phần
+                    làm phong phú lựa chọn ẩm thực cho du khách.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZKP8mkZKVpO8gKm24pBR4F739cex49cF9pnzyztK7uA&s=10"
+            alt="Mắm Châu Đốc">
+
+            <div class="card-content">
+                <h3>🥘 Mắm Châu Đốc</h3>
+
+                <p>
+                    Châu Đốc được nhiều người biết đến
+                    với các loại mắm đặc sản. Đây là sản phẩm
+                    gắn liền với đời sống và văn hóa ẩm thực
+                    của người dân vùng sông nước.
+                </p>
+
+                <h4>Đặc điểm</h4>
+                <p>
+                    Mắm được chế biến từ các loại cá,
+                    trải qua quá trình làm sạch, ướp muối
+                    và ủ theo phương pháp truyền thống.
+                </p>
+
+                <h4>Cách sử dụng</h4>
+                <p>
+                    Mắm có thể được dùng để nấu lẩu mắm,
+                    làm mắm chưng hoặc chế biến thành
+                    nhiều món ăn khác nhau.
+                </p>
+
+                <h4>Giá trị đặc sản</h4>
+                <p>
+                    Các loại mắm góp phần tạo nên thương hiệu
+                    ẩm thực Châu Đốc và thường được du khách
+                    lựa chọn làm quà khi đến tham quan.
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo9f_6MHrP-EZZeE0hYfq0pQtlVKxrRqOMlllqAAnu0g&s=10"
+            alt="Thốt nốt">
+
+            <div class="card-content">
+                <h3>🍃 Thốt nốt</h3>
+
+                <p>
+                    Thốt nốt là loại cây gắn liền với đời sống
+                    của người dân vùng Bảy Núi. Nhiều sản phẩm
+                    từ thốt nốt đã trở thành đặc sản được
+                    du khách yêu thích.
+                </p>
+
+                <h4>Các sản phẩm phổ biến</h4>
+                <p>
+                    Nước thốt nốt, đường thốt nốt,
+                    bánh bò thốt nốt và các món ăn chế biến
+                    từ quả thốt nốt là những sản phẩm quen thuộc.
+                </p>
+
+                <h4>Hương vị</h4>
+                <p>
+                    Nước thốt nốt có vị ngọt thanh,
+                    cùi thốt nốt có độ mềm và dai nhẹ.
+                    Đường thốt nốt có hương thơm đặc trưng.
+                </p>
+
+                <h4>Giá trị địa phương</h4>
+                <p>
+                    Các sản phẩm từ thốt nốt vừa phục vụ
+                    nhu cầu ẩm thực vừa góp phần phát triển
+                    nghề truyền thống và quảng bá đặc sản
+                    của vùng Bảy Núi.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- TIỀM NĂNG DU LỊCH -->
+<section class="potential" id="potential">
+    <h2 class="section-title">TIỀM NĂNG PHÁT TRIỂN DU LỊCH</h2>
+
+    <p class="section-desc">
+        An Giang có nhiều lợi thế để phát triển du lịch,
+        thu hút du khách trong nước và quốc tế.
+    </p>
+
+    <div class="potential-box">
+
+        <div class="potential-item">
+            <h3>🌳 1. Lợi thế về thiên nhiên</h3>
+            <p>
+                An Giang có sự đa dạng về cảnh quan như núi,
+                rừng tràm, sông nước và hồ tự nhiên.
+                Đây là điều kiện thuận lợi để phát triển
+                du lịch sinh thái, khám phá và nghỉ dưỡng.
+            </p>
+        </div>
+
+        <div class="potential-item">
+            <h3>🏛️ 2. Lợi thế về văn hóa</h3>
+            <p>
+                Sự giao thoa văn hóa giữa các cộng đồng dân tộc,
+                những lễ hội truyền thống, di tích lịch sử
+                và công trình tâm linh tạo nên sức hấp dẫn
+                riêng cho du lịch văn hóa.
+            </p>
+        </div>
+
+        <div class="potential-item">
+            <h3>🍜 3. Lợi thế về ẩm thực</h3>
+            <p>
+                Những món ăn và đặc sản như bún cá Châu Đốc,
+                mắm Châu Đốc, tung lò mò và các sản phẩm
+                từ thốt nốt có thể trở thành điểm nhấn
+                trong các chương trình du lịch trải nghiệm.
+            </p>
+        </div>
+
+        <div class="potential-item">
+            <h3>📱 4. Cơ hội quảng bá du lịch</h3>
+            <p>
+                Có thể sử dụng website, mạng xã hội,
+                video và hình ảnh để giới thiệu điểm đến.
+                Việc quảng bá trên nền tảng số giúp du khách
+                dễ dàng tìm hiểu thông tin và lên kế hoạch
+                cho chuyến đi.
+            </p>
+        </div>
+
+        <div class="potential-item">
+            <h3>🤝 5. Phát triển du lịch cộng đồng</h3>
+            <p>
+                Khuyến khích người dân tham gia các hoạt động
+                du lịch như giới thiệu nghề truyền thống,
+                hướng dẫn tham quan, phục vụ ẩm thực
+                và bán sản phẩm địa phương.
+            </p>
+        </div>
+
+        <div class="potential-item">
+            <h3>♻️ 6. Phát triển du lịch bền vững</h3>
+            <p>
+                Cần bảo vệ cảnh quan, giữ gìn vệ sinh môi trường,
+                bảo tồn hệ sinh thái và tôn trọng văn hóa
+                cộng đồng. Đây là nền tảng để du lịch
+                phát triển lâu dài.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ĐIỂM NHẤN -->
+<div class="highlight">
+    <section>
+        <h2>AN GIANG – ĐIỂM ĐẾN ĐÁNG TRẢI NGHIỆM</h2>
+
+        <p>
+            Không chỉ sở hữu cảnh quan thiên nhiên đa dạng,
+            An Giang còn là nơi lưu giữ nhiều giá trị lịch sử,
+            văn hóa và truyền thống của vùng đất miền Tây.
+            Mỗi địa danh, lễ hội và món ăn đều góp phần
+            tạo nên bản sắc riêng của địa phương.
+            Hãy cùng khám phá, trải nghiệm và chung tay
+            quảng bá vẻ đẹp An Giang đến với mọi người!
+        </p>
+    </section>
+</div>
+
+<!-- LỊCH TRÌNH -->
+<section class="itinerary" id="schedule">
+    <h2 class="section-title">GỢI Ý LỊCH TRÌNH DU LỊCH</h2>
+
+    <p class="section-desc">
+        Lịch trình tham khảo giúp du khách khám phá
+        thiên nhiên, văn hóa và ẩm thực An Giang.
+    </p>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <h3>📍 Buổi sáng – Khám phá thiên nhiên</h3>
+
+            <p>
+                Bắt đầu hành trình bằng việc tham quan
+                một địa điểm nổi bật như Núi Cấm hoặc
+                Rừng tràm Trà Sư. Du khách có thể ngắm cảnh,
+                chụp ảnh và tìm hiểu vẻ đẹp thiên nhiên.
+            </p>
+
+            <h4>Trải nghiệm nổi bật</h4>
+            <p>
+                Tham quan cảnh quan, tìm hiểu hệ sinh thái,
+                tận hưởng không khí trong lành và ghi lại
+                những khoảnh khắc đáng nhớ.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>📍 Buổi trưa – Thưởng thức ẩm thực</h3>
+
+            <p>
+                Dành thời gian thưởng thức các món ăn
+                đặc trưng của địa phương như bún cá Châu Đốc,
+                gỏi sầu đâu hoặc những món ăn dân dã khác.
+            </p>
+
+            <h4>Trải nghiệm nổi bật</h4>
+            <p>
+                Tìm hiểu nguyên liệu, cách chế biến
+                và hương vị đặc trưng của ẩm thực An Giang.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>📍 Buổi chiều – Tìm hiểu văn hóa</h3>
+
+            <p>
+                Tham quan các công trình văn hóa, tâm linh
+                và tìm hiểu đời sống của cộng đồng địa phương.
+                Có thể tìm hiểu kiến trúc, phong tục,
+                trang phục và nghề truyền thống.
+            </p>
+
+            <h4>Trải nghiệm nổi bật</h4>
+            <p>
+                Tìm hiểu những nét văn hóa của cộng đồng Khmer,
+                Chăm và các lễ hội truyền thống tại địa phương.
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>📍 Buổi tối – Trải nghiệm địa phương</h3>
+
+            <p>
+                Dành thời gian thưởng thức ẩm thực,
+                khám phá không gian sinh hoạt địa phương
+                và tìm mua những sản phẩm đặc sản làm quà.
+            </p>
+
+            <h4>Trải nghiệm nổi bật</h4>
+            <p>
+                Tìm hiểu sản phẩm thủ công, đặc sản địa phương
+                và cảm nhận cuộc sống bình dị của người dân.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CHÂN TRANG -->
+<footer>
+    <h2>🌿 KHÁM PHÁ AN GIANG</h2>
+
+    <p>
+        Vẻ đẹp thiên nhiên – Bản sắc văn hóa – Con người thân thiện
+    </p>
+
+    <br>
+
+    <p>Website giới thiệu và quảng bá du lịch An Giang.</p>
+    <p>© 2026 | Thiết kế phục vụ học tập</p>
+</footer>
+
+</body>
+</html>
